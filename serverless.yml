@@ -14,11 +14,14 @@ provider:
 
 # The `functions` block defines what code to deploy
 functions:
-  helloWorld:
-    handler: handler.helloWorld
-    # The `events` block defines how to trigger the handler.helloWorld code
+  ref:
+    handler: handler.ref
+    # The `events` block defines how to trigger the handler code
     events:
       - http:
-          path: hello-world
+          path: ref
           method: get
           cors: true
+
+plugins:
+  - serverless-offline
